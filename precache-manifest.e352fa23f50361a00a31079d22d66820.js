@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "38cd796c2012e7f681fd871b80e20521",
+    "revision": "248a3b63982adc315e41cf5f968c22cf",
     "url": "/indian-heros/index.html"
   },
   {
-    "revision": "d5d726d5f6e65d2347cd",
-    "url": "/indian-heros/static/css/main.171dd86e.chunk.css"
+    "revision": "c39784641aafecae0ba6",
+    "url": "/indian-heros/static/css/main.431fcb0c.chunk.css"
   },
   {
-    "revision": "b6709a802f9f1400343a",
-    "url": "/indian-heros/static/js/2.98bbdc32.chunk.js"
+    "revision": "c9b762d64d6815966195",
+    "url": "/indian-heros/static/js/2.d4987e98.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/indian-heros/static/js/2.98bbdc32.chunk.js.LICENSE.txt"
+    "url": "/indian-heros/static/js/2.d4987e98.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d5d726d5f6e65d2347cd",
-    "url": "/indian-heros/static/js/main.aa4be1a1.chunk.js"
+    "revision": "c39784641aafecae0ba6",
+    "url": "/indian-heros/static/js/main.0d371a1c.chunk.js"
   },
   {
     "revision": "19d77f1a067b85d60808",
