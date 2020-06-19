@@ -7,45 +7,22 @@ import instagram from '../src/images/social-media/instagram.png';
 import facebook from '../src/images/social-media/facebook.png';
 import twitter from '../src/images/social-media/twitter.png';
 import './App.css';
-
-const heros = ["Abbakka Chowta", 1000,
-"Bhagat Singh", 1000,
-"Chandra Shekhar Azad", 1000,
-"Dadabhai Naoroji", 1000,
-"E [Suggestion Required]", 1000,
-"Fazle Haq Khairabadi", 1000,
-"Govind Ballabh Pant", 1000,
-"Hasrat Mohani", 1000,
-"I [Suggestion Required]",
-"Jawaharlal Nehru", 1000,
-"Kanaiyalal Maneklal Munshi", 1000,
-"Lal Bahadur Shastri", 1000,
-"Mohandas Karamchand Gandhi", 1000,
-"N [Suggestion Required]", 1000,
-"O [Suggestion Required]", 1000,
-"Pingali Venkayya", 1000,
-"Q [Suggestion Required]", 1000,
-"Rani Lakshmi Bai", 1000,
-"Subhash Chandra Bose", 1000,
-"Tantia Tope", 1000,
-"Udham Singh", 1000,
-"Vinayak Damodar Savarkar", 1000,
-"War Batukeshwar Dutt", 1000,
-"X [Suggestion Required]", 1000,
-"Y [Suggestion Required]", 1000,
-"Z [Suggestion Required]", 1000];
-
-const alphabetsArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+import {heros, alphabetsArray, herosList} from '../src/constantArrays.js'
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = { alphaChar: "" }
     this.callAlpha = this.callAlpha.bind(this);
+    this.herosList = this.herosList.bind(this);
   }
-  callAlpha(event){
+  callAlpha(event) {
     event.preventDefault();
     this.setState({alphaChar: "alphabets"});
+  } 
+  herosList(event) {
+    event.preventDefault();
+    this.setState({alphaChar: "herosList"});
   } 
   render () {
     let renderDiv;
@@ -53,6 +30,8 @@ class App extends Component {
       renderDiv = <div className="characters-container">
                     <Learn value={alphabetsArray} />
                   </div>
+    } else if(this.state.alphaChar === "herosList") {
+      renderDiv = <TableData value={herosList}/>
     } else {
       renderDiv = <div className="heroes-name">
                     <Typical 
@@ -66,7 +45,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <a href="#">
-            <img src={logo} className="App-logo" alt="logo" />
+            <img src={logo} className="App-logo" alt="logo" onClick={this.herosList} />
           </a>
           <a href="#">
             <img src={alpha} className="alphabets" alt="alphabets" onClick={this.callAlpha}/>
@@ -84,6 +63,7 @@ const Footer = () => {
   return(
     <footer className="">
       <span>Developed by <a href="https://www.linkedin.com/in/chethan-h-21545493/" target="_blank">Chethan H</a></span>
+      <span className="suggestion-mail">Write suggestions to <a href="mailto:chethan.hanu@gmail.com">chethan.hanu@gmail.com</a></span>
     </footer>
   );
 }
@@ -113,14 +93,41 @@ const SocialMedia = () => {
 
 const Learn = (props) => {
   const char = props.value;
-  const renderEle = char.map(ele => 
+  let renderEle = char.map(ele => 
     <span className="characters" key={ele}>
       <kbd>{ele}</kbd>
     </span>
   );
-  return(
-    renderEle
-  );
+  return(renderEle);
+}
+
+const TableData = (props) => {
+  const list = props.value;
+  let renderEle = <div className="table-content">
+    <table>
+      <caption>Hero's List</caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>BOD</th>
+          <th>Notable Activities</th>
+          <th>Links</th>
+        </tr>
+      </thead>
+      <tbody>
+        {list.map((ele, index) => 
+          // {console.log(ele, index);},
+          <tr key={index}>
+            <td>{ele.name}</td>
+            <td>{ele.dob}</td>
+            <td>{ele.activities}</td>
+            <td><a href={ele.links} target="_blank">{ele.links}</a></td>
+          </tr>  
+        )}
+      </tbody>
+    </table>
+    </div>
+  return (renderEle);
 }
 
 export default App;
