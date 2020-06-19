@@ -1,4 +1,5 @@
 import React from 'react';
+import Typical from 'react-typical';
 import logo from '../src/images/logo.png';
 import alpha from '../src/images/alphabets.png';
 import linkedin from '../src/images/social-media/linkedin.png';
@@ -7,32 +8,32 @@ import facebook from '../src/images/social-media/facebook.png';
 import twitter from '../src/images/social-media/twitter.png';
 import './App.css';
 
-const heros = ["Abbakka Chowta",
-"Bhagat Singh",
-"Chandra Shekhar Azad",
-"Dadabhai Naoroji",
-"E",
-"Fazle Haq Khairabadi",
-"Govind Ballabh Pant",
-"Hasrat Mohani",
-"I",
-"Jawaharlal Nehru",
-"Kanaiyalal Maneklal Munshi",
-"Lal Bahadur Shastri",
-"Mohandas Karamchand Gandhi",
-"N",
-"O",
-"Pingali Venkayya",
-"Q",
-"Rani Lakshmi Bai",
-"Subhash Chandra Bose",
-"Tantia Tope",
-"Udham Singh",
-"Vinayak Damodar Savarkar",
-"War Batukeshwar Dutt",
-"X",
-"Y",
-"Z"]
+const heros = ["Abbakka Chowta", 1000,
+"Bhagat Singh", 1000,
+"Chandra Shekhar Azad", 1000,
+"Dadabhai Naoroji", 1000,
+"E [Suggestion Required]", 1000,
+"Fazle Haq Khairabadi", 1000,
+"Govind Ballabh Pant", 1000,
+"Hasrat Mohani", 1000,
+"I [Suggestion Required]",
+"Jawaharlal Nehru", 1000,
+"Kanaiyalal Maneklal Munshi", 1000,
+"Lal Bahadur Shastri", 1000,
+"Mohandas Karamchand Gandhi", 1000,
+"N [Suggestion Required]", 1000,
+"O [Suggestion Required]", 1000,
+"Pingali Venkayya", 1000,
+"Q [Suggestion Required]", 1000,
+"Rani Lakshmi Bai", 1000,
+"Subhash Chandra Bose", 1000,
+"Tantia Tope", 1000,
+"Udham Singh", 1000,
+"Vinayak Damodar Savarkar", 1000,
+"War Batukeshwar Dutt", 1000,
+"X [Suggestion Required]", 1000,
+"Y [Suggestion Required]", 1000,
+"Z [Suggestion Required]", 1000]
 
 function App() {
   return (
@@ -44,8 +45,20 @@ function App() {
         <a href="#">
           <img src={alpha} className="alphabets" alt="alphabets" />
         </a>
+        {/* <div className="characters-container">
+          <Learn value="A"/>
+          <Learn value="B"/>
+        </div> */}
+        <div className="heroes-name">
+          <Typical 
+            loop={Infinity}
+            wrapper="b"
+            steps={heros}
+          />
+        </div>
         <Footer />
         <SocialMedia />
+        
       </header>
     </div>
   );
@@ -79,6 +92,14 @@ function SocialMedia() {
         </ul>
       </span>
     </div>
+  );
+}
+
+function Learn(props) {
+  return(
+    <span className="characters">
+      <kbd>{props.value}</kbd>
+    </span>
   );
 }
 
