@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/indian-heros/static/css/main.431fcb0c.chunk.css",
-    "main.js": "/indian-heros/static/js/main.0d371a1c.chunk.js",
-    "main.js.map": "/indian-heros/static/js/main.0d371a1c.chunk.js.map",
+    "main.css": "/indian-heros/static/css/main.7ce79534.chunk.css",
+    "main.js": "/indian-heros/static/js/main.016d5f19.chunk.js",
+    "main.js.map": "/indian-heros/static/js/main.016d5f19.chunk.js.map",
     "runtime-main.js": "/indian-heros/static/js/runtime-main.4cad4e98.js",
     "runtime-main.js.map": "/indian-heros/static/js/runtime-main.4cad4e98.js.map",
     "static/js/2.d4987e98.chunk.js": "/indian-heros/static/js/2.d4987e98.chunk.js",
     "static/js/2.d4987e98.chunk.js.map": "/indian-heros/static/js/2.d4987e98.chunk.js.map",
     "index.html": "/indian-heros/index.html",
-    "precache-manifest.e352fa23f50361a00a31079d22d66820.js": "/indian-heros/precache-manifest.e352fa23f50361a00a31079d22d66820.js",
+    "precache-manifest.842f9cf33e24e1802b245cedb0d9b57b.js": "/indian-heros/precache-manifest.842f9cf33e24e1802b245cedb0d9b57b.js",
     "service-worker.js": "/indian-heros/service-worker.js",
-    "static/css/main.431fcb0c.chunk.css.map": "/indian-heros/static/css/main.431fcb0c.chunk.css.map",
+    "static/css/main.7ce79534.chunk.css.map": "/indian-heros/static/css/main.7ce79534.chunk.css.map",
     "static/js/2.d4987e98.chunk.js.LICENSE.txt": "/indian-heros/static/js/2.d4987e98.chunk.js.LICENSE.txt",
     "static/media/alphabets.png": "/indian-heros/static/media/alphabets.7693a470.png",
     "static/media/index.css": "/indian-heros/static/media/background.820ac60b.jpg",
@@ -23,7 +23,7 @@
   "entrypoints": [
     "static/js/runtime-main.4cad4e98.js",
     "static/js/2.d4987e98.chunk.js",
-    "static/css/main.431fcb0c.chunk.css",
-    "static/js/main.0d371a1c.chunk.js"
+    "static/css/main.7ce79534.chunk.css",
+    "static/js/main.016d5f19.chunk.js"
   ]
 }
