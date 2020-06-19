@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/indian-heros/precache-manifest.3a8c838a67533ed706a146c33b5db92f.js"
+  "/indian-heros/precache-manifest.6328a2a99fc3b30f53bf418dd72bd24b.js"
 );
 
 self.addEventListener('message', (event) => {
