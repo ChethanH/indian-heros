@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Typical from 'react-typical';
 import logo from '../src/images/logo.png';
 import alpha from '../src/images/alphabets.png';
@@ -33,38 +33,54 @@ const heros = ["Abbakka Chowta", 1000,
 "War Batukeshwar Dutt", 1000,
 "X [Suggestion Required]", 1000,
 "Y [Suggestion Required]", 1000,
-"Z [Suggestion Required]", 1000]
+"Z [Suggestion Required]", 1000];
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <a href="#">
-          <img src={logo} className="App-logo" alt="logo" />
-        </a>
-        <a href="#">
-          <img src={alpha} className="alphabets" alt="alphabets" />
-        </a>
-        {/* <div className="characters-container">
-          <Learn value="A"/>
-          <Learn value="B"/>
-        </div> */}
-        <div className="heroes-name">
-          <Typical 
-            loop={Infinity}
-            wrapper="b"
-            steps={heros}
-          />
-        </div>
-        <Footer />
-        <SocialMedia />
-        
-      </header>
-    </div>
-  );
+const alphabetsArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { alphaChar: "" }
+    this.callAlpha = this.callAlpha.bind(this);
+  }
+  callAlpha(event){
+    event.preventDefault();
+    this.setState({alphaChar: "alphabets"});
+  } 
+  render () {
+    let renderDiv;
+    if(this.state.alphaChar === "alphabets") {
+      renderDiv = <div className="characters-container">
+                    <Learn value={alphabetsArray} />
+                  </div>
+    } else {
+      renderDiv = <div className="heroes-name">
+                    <Typical 
+                      loop={Infinity}
+                      wrapper="b"
+                      steps={heros}
+                    />
+                  </div>
+    }
+    return (
+      <div className="App">
+        <header className="App-header">
+          <a href="#">
+            <img src={logo} className="App-logo" alt="logo" />
+          </a>
+          <a href="#">
+            <img src={alpha} className="alphabets" alt="alphabets" onClick={this.callAlpha}/>
+          </a>
+          {renderDiv}
+          <Footer />
+          <SocialMedia />
+        </header>
+      </div>
+    );
+  }
 }
 
-function Footer() {
+const Footer = () => {
   return(
     <footer className="">
       <span>Developed by <a href="https://www.linkedin.com/in/chethan-h-21545493/" target="_blank">Chethan H</a></span>
@@ -72,7 +88,7 @@ function Footer() {
   );
 }
 
-function SocialMedia() {
+const SocialMedia = () => {
   return(
     <div className="social-media-icon">
       <span className="media-icons">
@@ -95,11 +111,15 @@ function SocialMedia() {
   );
 }
 
-function Learn(props) {
-  return(
-    <span className="characters">
-      <kbd>{props.value}</kbd>
+const Learn = (props) => {
+  const char = props.value;
+  const renderEle = char.map(ele => 
+    <span className="characters" key={ele}>
+      <kbd>{ele}</kbd>
     </span>
+  );
+  return(
+    renderEle
   );
 }
 

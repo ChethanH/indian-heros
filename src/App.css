@@ -26,12 +26,16 @@
   margin: 2px;
   height: 30px;
   width: 30px;
-  font-size: 30px;
+  font-size: 40px;
   border: 1px yellow solid;
+  color: #863636;
+  border-radius: 10%;
 }
 
 .characters-container {
-  width: 100%;
+  /* width: 100%; */
+  margin: 15% 0% 10% 0%;
+  text-align: center;
 }
 
 /* @media (prefers-reduced-motion: no-preference) {
